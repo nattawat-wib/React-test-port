@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color:  #FCEDBE;
+  --secondary-color:  #DFA006;
+
+  --hover-color:  #F4C464;
+
+  --nav-font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  background-color: gray;
+  margin: 0;
+  padding: 65px 0 0 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:focus {
+  outline: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;  
+  background-color: var(--primary-color);
+}
+
+.nav {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.nav__logo {
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--secondary-color);
+  transition: .3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav__logo:hover {
+  color: var(--hover-color);
 }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  justify-self: self-start;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  margin: 0 15px;
+}
+
+nav ul li::after {
+  content: '';
+  background-color:var(--hover-color);
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transition: .5s ease;
+}
+
+nav ul li:hover::after {
+  transform: scale(1, 1);
+}
+
+nav ul li a {
+  color: var(--secondary-color);
+  padding: 0;
+  text-decoration: none;
+  font-size: var(--nav-font-size);
+  transition: .3s ease;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: var(--hover-color);
+}
+
+nav button {
+  font-size: var(--nav-font-size);
+  padding: 7px 15px;
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  transition: .3s ease;
+}
+
+nav button:hover {
+  background-color: var(--hover-color);
+  color: var(--primary-color);
+  border: 1px solid var(--hover-color);
+}
+
+.header__typing-text {
+  color: blue;
+  font-size: 40px;
+
+}
+
+header h1 {
+  text-decoration: underline;
+}
+
+header {
+  height: 100vh;
+  margin-bottom: 10000px;
+}
+
+header img {
+  height: 100vh;
+}
+
+
