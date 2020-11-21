@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-const NavItems = (props) => {
+const NavMenu = (props) => {
     return (
         <li>
             <NavLink to={props.to} exact activeClassName="navActive"> {props.name} </NavLink>
@@ -9,4 +9,13 @@ const NavItems = (props) => {
     );
 }
 
-export default NavItems;
+const NavButton = (props) => {
+    return (
+        <button>
+            {props.text}
+        </button>
+    )
+}
+
+
+export { NavMenu, NavButton };

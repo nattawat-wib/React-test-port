@@ -8,9 +8,8 @@
 }
 
 html, body {
-  background-color: gray;
   margin: 0;
-  padding: 65px 0 0 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -29,7 +28,8 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;  
-  background-color: var(--primary-color);
+  background-color: transparent;
+  z-index: 10;
 }
 
 .nav {
@@ -49,6 +49,10 @@ nav {
 
 .nav__logo:hover {
   color: var(--hover-color);
+}
+
+#nav__toggle {
+  display: none;
 }
 
 nav ul {
@@ -93,6 +97,10 @@ nav ul li a:hover {
   color: var(--hover-color);
 }
 
+nav label {
+  display: none;
+}
+
 nav button {
   font-size: var(--nav-font-size);
   padding: 7px 15px;
@@ -108,23 +116,65 @@ nav button:hover {
   border: 1px solid var(--hover-color);
 }
 
-.header__typing-text {
-  color: blue;
-  font-size: 40px;
+header {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
+.header__block1{
+  background-color: var(--primary-color);
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+
+.header__block2{
+  background-color: var(--primary-color);
+  width: 40vw;
+  height: 40vh;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+.header__text-box {
+  margin: auto;
+  width: 50%;
+  height: auto;
+  position: absolute  ;
+  left:  15%;
 }
 
 header h1 {
-  text-decoration: underline;
+  color: var(--hover-color);
+  font-size: 80px;
 }
 
-header {
-  height: 100vh;
-  margin-bottom: 10000px;
+.header__typing-text {
+  color: var(--secondary-color);
+  background-color: var(--hover-color);
+  font-size: 60px;
 }
 
-header img {
-  height: 100vh;
+.header__img {
+  width: 50%;
+  height: auto;
 }
 
+.header__center {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
 
+}
